@@ -12,9 +12,12 @@ app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
-app.use(express.static(path.resolve(__dirname, '/public/tvmaze')));
+app.use(express.static(path.resolve(__dirname, './public/tvmaze/build')));
 
-app.use('/', indexRouter);
+//app.use('/', indexRouter);
+app.get("/api", (req, res) => {
+    res.json({ message: "Hello from server!" });
+});
 app.use('/users', usersRouter);
 
 module.exports = app;
