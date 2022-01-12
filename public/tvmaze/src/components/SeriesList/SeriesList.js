@@ -15,9 +15,10 @@ function SeriesList(props) {
 
 function SeriesListItem({ series }) {
     return (
-        <li key={series.show.id}>{series.show.name}</li>
+        <li key={series.show.id}>
+            <a href={"/show/" + series.show.id + "/seasons"}>{series.show.name}</a>
+        </li>
     )
 }
-
 
 export default SeriesList;
