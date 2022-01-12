@@ -25,7 +25,7 @@ class Series extends React.Component {
             seriesName: event.target.value, 
             isFetching: true
         })
-        fetch(`http://api.tvmaze.com/search/shows?q=${event.target.value}`)
+        fetch(`https://api.tvmaze.com/search/shows?q=${event.target.value}`)
         .then(response => response.json())
         .then(json => this.setState({ series: json, isFetching: false }));
         console.log(event);
