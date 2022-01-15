@@ -20,4 +20,9 @@ app.get("/api", (req, res) => {
 });
 app.use('/users', usersRouter);
 
+// Handles any requests that don't match the ones above
+app.get('*', (req,res) =>{
+    res.sendFile(path.join(__dirname + '/public/tvmaze/build/index.html'));
+});
+
 module.exports = app;
