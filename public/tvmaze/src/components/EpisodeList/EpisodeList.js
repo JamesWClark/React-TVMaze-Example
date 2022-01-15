@@ -18,22 +18,23 @@ function EpisodeListItem({ episode }) {
     const episodeNumber = episode.number;
     const episodeAirDate = episode.airdate;
     const episodeSummary = episode.summary;
-    const episodeRating = episode.average;
     const episodeRuntime = episode.runtime;
+    let episodeRating = '';
     let episodeImage = "https://place-hold.it/107x150";
+    try { episodeRating = episode.rating.average } catch(e) { }
     try { episodeImage = episode.image.medium; } catch(e) { }
 
     return (
         <li key={episodeID}>
             <a href={"/episode/" + episodeID}>
-                <div className="ib w20">
+                <div className="ib w40">
                     <img src={episodeImage} alt="" />
                 </div>
-                <div className="ib w80">
+                <div className="ib w60">
                     <div><strong>Episode {episodeNumber}: {episodeName}</strong></div>
                     <div dangerouslySetInnerHTML={{__html: episodeSummary}}></div> 
                     <div>Air Date: {episodeAirDate}</div>
-                    <div>Rating: {episodeRating}/10</div>
+                    <div>Rating: {episodeRating}</div>
                     <div>Runtime: {episodeRuntime}</div>
                 </div>
             </a>

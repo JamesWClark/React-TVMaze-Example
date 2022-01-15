@@ -15,6 +15,8 @@ code {
 .ib { display: inline-block; }
 
 .w20 { width: 20%; }
+.w40 { width: 40%; }
+.w60 { width: 60%; }
 .w80 { width: 80%; }
 
 .show-list-container {
