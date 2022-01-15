@@ -32,9 +32,14 @@ function EpisodeListItem({ episode }) {
                 </div>
                 <div className="ib w60">
                     <div><strong>Episode {episodeNumber}: {episodeName}</strong></div>
-                    <div dangerouslySetInnerHTML={{__html: episodeSummary}}></div> 
-                    <div>Air Date: {episodeAirDate}</div>
-                    <div>Rating: {episodeRating}</div>
+                    {
+                        episodeSummary && episodeSummary.lenght > 0 
+                            && <div>Air Date: {episodeAirDate}</div>
+                    }
+                    {
+                        !episodeSummary && <br />
+                    }
+                    <div>{episodeRating && episodeRating.length > 0 ? "Rating: " + episodeRating : ""}</div>
                     <div>Runtime: {episodeRuntime}</div>
                 </div>
             </a>
