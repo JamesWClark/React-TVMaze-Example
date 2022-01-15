@@ -12,5 +12,43 @@ code {
     monospace;
 }
 
-.flex { display: flex; }
-.x1 { flex: 1; }
+.ib { display: inline-block; }
+
+.w20 { width: 20%; }
+.w80 { width: 80%; }
+
+.show-list-container {
+  margin: auto;
+  padding: 20px;
+  max-width: 80%;
+  width: 800px;
+}
+
+.show-list {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.show-list li {
+  text-align: left;
+  margin-bottom: 20px;
+  background-color: #eee;
+  padding: 20px;
+  vertical-align: top;
+}
+
+.show-list li a { 
+  color: #333;
+}
+
+.show-list .ib {
+  vertical-align: top;
+}
+
+.show-list li a img {
+  height: 150px;
+}
+
+.show-list li:hover {
+  background-color: #ccc;
+}

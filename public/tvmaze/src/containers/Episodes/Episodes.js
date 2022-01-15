@@ -1,12 +1,12 @@
 import React from 'react';
-import SeasonList from '../../components/SeasonList/SeasonList.js';
+import EpisodeList from '../../components/EpisodeList/EpisodeList.js';
 import { useParams } from "react-router-dom";
 
-class WrappedSeasons extends React.Component {
+class WrappedEpisodes extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            seasons: [],
+            episodes: [],
             seriesName: ''
         }
     }
@@ -22,24 +22,24 @@ class WrappedSeasons extends React.Component {
         // get the seasons of the show
         fetch(`https://api.tvmaze.com/shows/${showID}/seasons`)
         .then(response => response.json())
-        .then(json => this.setState({ seasons: json }));
+        .then(json => this.setState({ episodes: json }));
     }
     
     render() {
-        const { seasons, seriesName } = this.state;
+        const { episodes, seriesName } = this.state;
         return (
             <div>
                 <h1>{seriesName}</h1>
                 <hr />
-                <SeasonList list={seasons} />
+                <EpisodeList list={episodes} />
             </div>
         )
     }    
 }
 
-function Seasons(props) {
+function Episodes(props) {
     const params = useParams();
-    return <WrappedSeasons {...props} params={params} />
+    return <WrappedEpisodes {...props} params={params} />
 }
 
-export default Seasons;
+export default Episodes;

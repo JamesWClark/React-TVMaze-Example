@@ -13,12 +13,6 @@ class Series extends React.Component {
         }
         this.onSeriesInputChange = this.onSeriesInputChange.bind(this);
     }
-    /* on page load event kinda 
-    componentDidMount() {
-        fetch('http://api.tvmaze.com/search/shows?q=Vikings')
-        .then(response => response.json())
-        .then(json => this.setState({ series: json }));
-    } */
 
     onSeriesInputChange(event) {
         this.setState({
@@ -28,8 +22,6 @@ class Series extends React.Component {
         fetch(`https://api.tvmaze.com/search/shows?q=${event.target.value}`)
         .then(response => response.json())
         .then(json => this.setState({ series: json, isFetching: false }));
-        console.log(event);
-        console.log(event.target.value);
     }
     
     render() {

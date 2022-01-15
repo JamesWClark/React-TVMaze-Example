@@ -9,7 +9,6 @@
     "debug": "DEBUG=expgen:* nodemon ./bin/www",
     "windebug": "set DEBUG=expgen:* & nodemon ./bin/www",
     "verbose": "set DEBUG=* & nodemon ./bin/www"
-
   },
   "dependencies": {
     "cookie-parser": "~1.4.4",
