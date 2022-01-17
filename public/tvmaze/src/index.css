@@ -12,6 +12,10 @@ code {
     monospace;
 }
 
+input:focus::placeholder { /* How do I auto-hide placeholder text */
+  color: transparent; /* https://stackoverflow.com/a/12250084 */
+}
+
 .ib { display: inline-block; }
 
 .w20 { width: 20%; }
